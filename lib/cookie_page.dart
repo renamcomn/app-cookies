@@ -1,3 +1,4 @@
+import 'package:cookies_app/detail_page.dart';
 import 'package:flutter/material.dart';
 
 class CookiePage extends StatelessWidget {
@@ -38,15 +39,15 @@ class CookiePage extends StatelessWidget {
   Widget _buildCard(String name, String price, String imgPath, bool added,
       bool isFavorite, context) {
     return Padding(
-        padding: EdgeInsets.only(top: 5.0, bottom: 5.0, left: 5.0, right: 5.0),
+        padding: EdgeInsets.only(top: 5.0, bottom: 15.0, left: 5.0, right: 5.0),
         child: InkWell(
             onTap: () {
-              // Navigator.of(context).push(
-              //     MaterialPageRoute(builder: (context) => CookieDetail(
-              //       assetPath: imgPath,
-              //       cookieprice:price,
-              //       cookiename: name
-              //     )));
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => DetailPage(
+                    assetPath: imgPath,
+                    cookieprice:price,
+                    cookiename: name
+                  )));
             },
             child: Container(
                 decoration: BoxDecoration(
